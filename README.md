@@ -332,3 +332,37 @@ operator-sdk olm install
 # 使用 Operator SDK 中的 OLM 集成在集群中运行 Operator
 operator-sdk run bundle docker.io/jxlwqq/cnat-operator-bundle:v0.0.1
 ```
+
+
+### 创建自定义资源
+
+使用下面这个命令，获取标准时区时间戳：
+```shell
+TZ=UTC date +%Y-%m-%dT%H:%M:%SZ
+```
+
+编辑 config/samples/cnat_v1alpha1_atyaml.yaml 上的 Memcached CR 清单示例，使其包含以下规格：
+
+```yaml
+apiVersion: cnat.programming-kubernetes.info/v1alpha1
+kind: At
+metadata:
+  name: at-sample
+spec:
+  schedule: "2021-09-09T07:05:59Z"
+  command: "echo YAY"
+```
+
+创建 CR：
+```shell
+kubectl apply -f config/samples/cnat_v1alpha1_atyaml
+```
+
+查看 Pod
+```shell
+kubectl logs at-example-pod
+```
+
+返回：`YAY`
+
+
