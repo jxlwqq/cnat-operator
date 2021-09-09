@@ -361,9 +361,16 @@ spec:
 kubectl apply -f config/samples/cnat_v1alpha1_at.yaml
 ```
 
-查看 Pod
+查看 Pod 返回:
+
 ```shell
-kubectl logs at-example-pod
+NAME            READY   STATUS      RESTARTS   AGE
+at-sample-pod   0/1     Completed   0          14s
+```
+
+查看 Log：
+```shell
+kubectl logs at-sample-pod
 ```
 
 返回：`YAY`
