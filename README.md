@@ -44,3 +44,35 @@ operator-sdk create api \
 --version=v1alpha1 \
 --kind=At
 ```
+
+
+定义 Memcached 自定义资源（CR）的 API。
+
+修改 api/v1alpha1/at.go 中的 Go 类型定义，使其具有以下 spec 和 status
+
+```go
+const (
+	PhasePending = "PENDING"
+	PhaseRunning = "RUNNING"
+	PhaseDone    = "DONE"
+)
+
+type AtSpec struct {
+	Schedule string `json:"schedule,omitempty"`
+	Command string `json:"command,omitempty"`
+}
+
+type AtStatus struct {
+	Phase string `json:"phase,omitempty"`
+}
+```
+
+为资源类型更新生成的代码：
+```shell
+make generate
+```
+
+运行以下命令以生成和更新 CRD 清单：
+```shell
+make manifests
+```
