@@ -1,5 +1,8 @@
 # cnat-operator
 
+> cnat-operator 是书籍《Programming Kubernetes》的经典示例，此书著于2019年，Operator-SDK 版本迭代较快，随书的代码仓库 
+> https://github.com/programming-kubernetes/cnat 已基本不可用。所以本示例基于最新版本的 Operator-SDK，做了大量的修改和调整。
+
 ### 前置条件
 
 * 安装 Docker Desktop，并启动内置的 Kubernetes 集群
