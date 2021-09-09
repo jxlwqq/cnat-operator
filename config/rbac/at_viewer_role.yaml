@@ -1,0 +1,20 @@
+# permissions for end users to view ats.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: at-viewer-role
+rules:
+- apiGroups:
+  - cnat.programming-kubernetes.info
+  resources:
+  - ats
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cnat.programming-kubernetes.info
+  resources:
+  - ats/status
+  verbs:
+  - get

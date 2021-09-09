@@ -28,3 +28,19 @@ operator-sdk init \
 --repo=github.com/jxlwqq/cnat-operator \
 --skip-go-version-check
 ```
+
+
+### 创建 API 和控制器
+
+使用 Operator SDK CLI 创建自定义资源定义（CRD）API 和控制器。
+
+运行以下命令创建带有组 cnat、版本 v1alpha1 和种类 At 的 API：
+
+```shell
+operator-sdk create api \
+--resource=true \
+--controller=true \
+--group=cnat \
+--version=v1alpha1 \
+--kind=At
+```
