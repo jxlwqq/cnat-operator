@@ -46,7 +46,7 @@ operator-sdk create api \
 ```
 
 
-定义 Memcached 自定义资源（CR）的 API。
+定义 At 自定义资源（CR）的 API。
 
 修改 api/v1alpha1/at.go 中的 Go 类型定义，使其具有以下 spec 和 status
 
@@ -174,7 +174,7 @@ func (r *AtReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Re
 			// Error reading the schedule. Wait until it is fixed.
 			return ctrl.Result{}, err
 		}
-		reqLogger.Info("Schedule parsing done", "Result", "diff", fmt.Sprintf("%v", d))
+		reqLogger.Info("Schedule parsing done", "diff", fmt.Sprintf("%v", d))
 		if d > 0 {
 			// Not yet time to execute the command, wait until the scheduled time
 			return reconcile.Result{RequeueAfter: d}, nil
@@ -341,7 +341,7 @@ operator-sdk run bundle docker.io/jxlwqq/cnat-operator-bundle:v0.0.1
 TZ=UTC date +%Y-%m-%dT%H:%M:%SZ
 ```
 
-编辑 config/samples/cnat_v1alpha1_atyaml.yaml 上的 Memcached CR 清单示例，使其包含以下规格：
+编辑 config/samples/cnat_v1alpha1_at.yaml 上的 At CR 清单示例，使其包含以下规格：
 
 ```yaml
 apiVersion: cnat.programming-kubernetes.info/v1alpha1
@@ -355,7 +355,7 @@ spec:
 
 创建 CR：
 ```shell
-kubectl apply -f config/samples/cnat_v1alpha1_atyaml
+kubectl apply -f config/samples/cnat_v1alpha1_at.yaml
 ```
 
 查看 Pod
@@ -369,7 +369,7 @@ kubectl logs at-example-pod
 ### 做好清理
 
 ```shell
-operator-sdk cleanup memcached-operator
+operator-sdk cleanup cnat-operator
 operator-sdk olm uninstall
 ```
 
