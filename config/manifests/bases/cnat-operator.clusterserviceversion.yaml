@@ -1,0 +1,48 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: cnat-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: At is the Schema for the ats API
+      displayName: At
+      kind: At
+      name: ats.cnat.programming-kubernetes.info
+      version: v1alpha1
+  description: cnat-operator
+  displayName: cnat-operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - cnat-operator
+  links:
+  - name: Cnat Operator
+    url: https://cnat-operator.domain
+  maintainers:
+  - email: jxlwqq@gmail.com
+    name: jxlwqq
+  maturity: alpha
+  provider:
+    name: jxlwqq
+    url: github.com/jxlwqq
+  version: 0.0.0
