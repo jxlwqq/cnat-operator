@@ -1,0 +1,9 @@
+domain: programming-kubernetes.info
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: cnat-operator
+repo: github.com/jxlwqq/cnat-operator
+version: "3"
