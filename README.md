@@ -366,3 +366,11 @@ kubectl logs at-example-pod
 返回：`YAY`
 
 
+### 做好清理
+
+```shell
+operator-sdk cleanup memcached-operator
+operator-sdk olm uninstall
+```
+
+
