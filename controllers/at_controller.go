@@ -90,7 +90,7 @@ func (r *AtReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Re
 			// Error reading the schedule. Wait until it is fixed.
 			return ctrl.Result{}, err
 		}
-		reqLogger.Info("Schedule parsing done", "Result", "diff", fmt.Sprintf("%v", d))
+		reqLogger.Info("Schedule parsing done", "diff", fmt.Sprintf("%v", d))
 		if d > 0 {
 			// Not yet time to execute the command, wait until the scheduled time
 			return reconcile.Result{RequeueAfter: d}, nil
