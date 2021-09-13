@@ -282,7 +282,7 @@ func (r *AtReconciler) SetupWithManager(mgr ctrl.Manager) error {
 make manifests
 ```
 
-#### 运行 Operator
+### 运行 Operator
 
 捆绑 Operator，并使用 Operator Lifecycle Manager（OLM）在集群中部署。
 
